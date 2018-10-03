@@ -27,7 +27,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void testSystemOutPrintlnInvocations() {
+    public void shouldPrintHelloWorldInOneLineAndHelloJavaInOtherLine() {
         Solution.main(null);
         Assert.assertEquals("Hello, World.\nHello, Java.\n", 
                             byteArrayOutputStream.toString());

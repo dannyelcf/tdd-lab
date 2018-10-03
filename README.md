@@ -2,25 +2,19 @@
 
 This repository contains my study experiments of Java TDD development.
 
-### Used Commands
+### Requirements
 
-Run the code below to create the `@mvn` function in your current shell section.
-The `@mvn` function run the `mvn` command inside a docker container using
-`maven:3.5.4-jdk-8-alpine` image.
+To manage environment variables of this project I use [direnv](https://github.com/direnv/direnv).
 
-``` sh
-    source setup-env
-```
+To run all codes of this project I use maven command inside a docker container. 
+See the content of `direnv/mvn.sh` to know how I do that.
 
-Run the code below to create `tdd-1` maven project in your current directory.
+To run all unit tests of a project inside a docker container you should execute 
+the following in project folder.
 
 ``` sh
-    @mvn archetype:generate -DgroupId=com.github.dannyelcf.tdd -DartifactId=tdd-1 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+$ $mvn clean test
 ```
 
-Enter in `tdd-1` directory and run all tests.
-
-``` sh
-    cd tdd-1
-    @mvn clean test
-```
+Note that `$mvn` is using rather than `mvn`. See the content of `.envrc` to see 
+how I created `$mvn` environment variable.

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  spring:
+    build: .
+    image: dannyelcf/tdd-lab-spring
+    working_dir: /tdd-lab/spring
+    volumes:
+       - ${PWD}:/tdd-lab/spring
+    ports:
+       - '8080:8080'

@@ -1,7 +1,10 @@
+# Mac
 .DS_Store
-# vscode
+
+# IDEs
 .vscode
-# maven
+
+# Maven
 .settings
 .classpath
 .project

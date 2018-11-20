@@ -6,5 +6,7 @@ services:
     working_dir: /tdd-lab/spring
     volumes:
        - ${PWD}:/tdd-lab/spring
+       - ${HOME}/.m2:/root/.m2
     ports:
        - '8080:8080'
+

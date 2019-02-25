@@ -1,0 +1,12 @@
+version: '3'
+services:
+  javaee6:
+    build: .
+    image: dannyelcf/tdd-lab-javaee6
+    working_dir: /tdd-lab/javaee6
+    volumes:
+       - ${PWD}:/tdd-lab/javaee6
+       - ${HOME}/.m2:/root/.m2
+    ports:
+       - '8080:8080'
+

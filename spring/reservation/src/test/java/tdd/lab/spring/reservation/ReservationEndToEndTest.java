@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import tdd.lab.spring.reservation.domain.Reservation;
 
 /**
- * Reservation class perform end to end tests through reservation API.
+ * Class that perform end to end tests through reservation API.
  * These tests take long time to execute because a Tomcat instance is necessary.
  * 
  * @author dannyelcf
@@ -28,16 +28,17 @@ public class ReservationEndToEndTest {
 	private TestRestTemplate restTemplate;				 
 	
 	@Test
-	public void getReservationOfSomeoneShouldReturnItsReservationDetails() {
+	public void getUserReservation_shouldReturnReservationDetails() {
 		// Arrange
 		
 		// Act
-		ResponseEntity<Reservation> response = restTemplate.getForEntity("/reservation/{name}", Reservation.class, "Dannyel");
+		ResponseEntity<Reservation> response = restTemplate.getForEntity("/reservation/{username}", Reservation.class, "dannyelcf");
 		
 		// Assert
 		Assertions.assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-		Assertions.assertThat(response.getBody().getId()).isNotNull();
-		Assertions.assertThat(response.getBody().getName()).isEqualTo("Dannyel");
+		Assertions.assertThat(response.getBody().getId()).isInstanceOf(Number.class);
+		Assertions.assertThat(response.getBody().getUsername()).isEqualTo("dannyelcf");
+		Assertions.assertThat(response.getBody().getName()).isEqualTo("Dannyel Cardoso da Fonseca");
 	}
 
 }

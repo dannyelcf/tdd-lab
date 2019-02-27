@@ -3,14 +3,12 @@ language: java
 service: docker
 
 before_install:
-  - docker build -t dannyelcf/tdd-lab-java66e javaee6/.docker
+  - docker build -t dannyelcf/tdd-lab-javaee6 javaee6/.docker
   - docker build -t dannyelcf/tdd-lab-spring spring/.docker
 
 install: true
 
-script:
-  - cd javaee6/reservation; ./mvnw clean test; cd ../../;
-  - cd spring/reservation; ./mvnw clean test; cd ../../;
+script: ./mvnw clean test -B
 
 cache:
   directories:

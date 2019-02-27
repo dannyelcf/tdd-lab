@@ -4,10 +4,10 @@
 	     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>tdd.lab.javaee6</groupId>
-	<artifactId>reservation</artifactId>
+	<groupId>io.github.dannyelcf.tdd.lab</groupId>
+	<artifactId>javaee6-reservation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>reservation</name>
+	<name>javaee6-reservation</name>
 	<description>Demo project for Java EE 6</description>
 
 	<properties>

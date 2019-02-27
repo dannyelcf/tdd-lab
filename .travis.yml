@@ -8,7 +8,9 @@ before_install:
 
 install: true
 
-script: ./mvnw clean test -B
+script:
+  - javaee6/reservation/./mvnw clean test -B 
+  - spring/reservation/./mvnw clean test -B
 
 cache:
   directories:

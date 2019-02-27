@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+THIS_FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 GIT_PROJECT_NAME=tdd-lab
 PLATFORM_NAME=javaee6
 PROJECT_NAME=reservation
@@ -9,7 +11,7 @@ DOCKER_IMAGE=dannyelcf/$GIT_PROJECT_NAME-$PLATFORM_NAME
 
 docker run \
        --rm \
-       -v $PWD:$PROJECT_FOLDER \
+       -v $THIS_FOLDER:$PROJECT_FOLDER \
        -v $HOME/.m2:/root/.m2 \
        -w $PROJECT_FOLDER $DOCKER_IMAGE \
        /bin/sh -c "mvn $*"
